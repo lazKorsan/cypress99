@@ -52,4 +52,8 @@ it('US002', function() {
   cy.get('#header a[href="/logout"]').click();
 });
 
+it('sswd', function() {
+  https://the-internet.herokuapp.com/checkboxes
+});
+
 
