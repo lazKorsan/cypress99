@@ -1,0 +1,5 @@
+ npx cypress open
+
+ bağlantı kurmak için gerekli komut
+
+ npm init -y

@@ -1,0 +1,13 @@
+1
+
+node.js
+
+2
+
+npm init -y
+
+kutuphane eklemek için termeinal de
+
+npm install cypress --save-dev
+
+npx cypress open
