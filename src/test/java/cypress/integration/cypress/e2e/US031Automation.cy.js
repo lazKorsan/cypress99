@@ -54,3 +54,5 @@ it('US031', function() {
   cy.get('#header b').click();
   cy.get('#header a[href="/logout"]').click();
 });
+
+
