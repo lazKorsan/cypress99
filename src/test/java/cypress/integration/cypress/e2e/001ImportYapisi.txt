@@ -1,0 +1,58 @@
+ Custom Commands (Önerilen Yöntem)
+Cypress'te bir metodu "global" hale getirip her yerden cy.login() şeklinde çağırmak için Custom Commands kullanılır.
+
+
+
+Cypress.Commands.add('login', (email, password) => {
+  cy.visit('/login')
+  cy.get('#email').type(email)
+  cy.get('#password').type(password)
+  cy.get('#login-button').click()
+})
+
+
+
+Test İçinde Kullanımı: Herhangi bir test dosyasında import yapmanıza gerek kalmadan doğrudan kullanabilirsiniz.
+it('Sisteme giriş yapmalı', () => {
+  cy.login('test@mail.com', 'sifre123')
+})
+
+2. Dışarıdan Fonksiyon/Metot Import Etme
+Tıpkı Java'daki gibi bir sınıftan veya dosyadan metot çekmek isterseniz, standart JavaScript/TypeScript import yapısını kullanabilirsiniz.
+
+export const loginMethod = (email, password) => {
+  cy.visit('/login')
+  cy.get('#email').type(email)
+  // ... diğer adımlar
+}
+
+
+Test Dosyasında Kullanımı:
+import { loginMethod } from '../utils/auth'
+
+it('Login testi', () => {
+  loginMethod('kullanici', 'sifre')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

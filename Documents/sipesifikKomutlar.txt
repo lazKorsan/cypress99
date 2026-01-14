@@ -1,0 +1,37 @@
+npx cypress run ——browser chrome —headed:
+Chrome browser 'ı açarak bütün testleri çalıştırır
+
+
+###
+
+npx cypress run ——spec 'cypress/e2e/day02/’
+*Default olarak Electron ile çalıştırır.
+
+
+###
+npx cypress run --spec 'cypress/e2e/day02/’ --browser chrome
+*day02 klasörüğndeki bütün testleri Chrome headless (browser açmadan) ile çalıştırır.
+
+###
+npx cypress run --spec 'cypress/e2e/day02/’ --browser chrome –headed
+*day02 klasörüğndeki bütün testleri Chrome browser II açarak çalıştırır.
+
+
+npx cypress run --spec 'cypress/e2e/day02/01_LoginTest1. cy.js’
+* Default olarak Electron ile çalıştırır.
+
+
+*****
+npx cypress run 'cypress/integration/cypress/e2e/US031Automation.cy.js' --browser chrome --headed
+*day02 klasörüğndeki 01_LoginTest1. cy.js' dosyasını Chrome açarak çalıştırır
+*****
+
+###
+npx cypress run --spec "src/test/java/cypress/integration/cypress/e2e/US016URLDogrulama.cy.js" --browser chrome --headed
+* Sadece US016URLDogrulama.cy.js testini Chrome tarayıcısını açarak çalıştırır.
+
+********
+Eklenen Kısayol: "test:US016": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US016URLDogrulama.cy.js\" --browser chrome --headed"
+Nasıl Kullanacaksınız? Artık terminale sadece şu kısa komutu yazmanız yeterli olacak:
+npm run test:US016
+********* bunun için  C:\Users\user\IdeaProjects\cypress99\package.json  içine ozel ekleme yapıldı.

@@ -1,0 +1,44 @@
+. Page Object Sınıfını Oluşturma
+Genellikle cypress/support/pageObjects veya cypress/pages adında bir klasör oluşturulur.
+
+// cypress/support/pageObjects/LoginPage.js
+class LoginPage {
+  // Elementleri bir nesne içinde toplamak düzen sağlar
+  elements = {
+    usernameInput: () => cy.get('#user-name'),
+    passwordInput: () => cy.get('#password'),
+    loginBtn: () => cy.get('#login-button')
+  }
+
+  // Sayfaya özel metotlar (aksiyonlar)
+  visit() {
+    cy.visit('/login')
+  }
+
+  login(username, password) {
+    this.elements.usernameInput().type(username)
+    this.elements.passwordInput().type(password)
+    this.elements.loginBtn().click()
+  }
+}
+
+export default new LoginPage(); // Örnek olarak dışa aktarılır
+
+Test Dosyasında Kullanma
+Oluşturduğunuz sayfayı test dosyanıza import ederek kullanabilirsiniz.
+
+// cypress/e2e/login_test.cy.js
+import loginPage from '../support/pageObjects/LoginPage'
+
+describe('Giriş Testleri', () => {
+  it('Başarılı giriş yapabilmeli', () => {
+    loginPage.visit()
+    loginPage.login('standard_user', 'secret_sauce')
+
+    cy.url().should('include', '/dashboard')
+  })
+})
+
+
+
+
