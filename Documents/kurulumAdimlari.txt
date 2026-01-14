@@ -1,0 +1,89 @@
+# GLOBAL (Makinenizde bir kere):
+npm install -g cypress
+# VEYA
+npm install -g some-package
+
+# LOCAL (Proje başına):
+npm install cypress --save-dev
+
+her-proje/
+├── node_modules/    ← Bu projeye özel (package.json'dan install edilir)
+├── package.json     ← Bağımlılıklar burada
+├── cypress/         ← Cypress dosyaları
+└── ...
+
+
+# 1. Her yeni projede:
+mkdir yeni-projem
+cd yeni-projem
+
+# 2. package.json oluştur:
+npm init -y
+
+# 3. Cypress'i PROJEYE ÖZEL kur:
+npm install cypress --save-dev
+
+# 4. Çalıştır:
+npx cypress open
+
+
+
+3. INTELLIJ IDEA'DA DOĞRU KURULUM:
+A) Yeni Proje Açarken:
+
+File → New → Project
+
+Empty Project seç
+
+Terminal aç: npm init -y
+
+npm install cypress --save-dev
+
+package.json'a script ekle:
+
+json
+"scripts": {
+  "test": "cypress open"
+}
+
+B) Mevcut Projeye Cypress Ekleme:
+
+bash
+# IntelliJ Terminal'inde:
+npm init -y
+npm install cypress --save-dev
+
+
+
+4. EN İYİ PRACTICE (TEAM DEVELOPMENT):
+.gitignore (MUTLAKA ekle!):
+
+text
+node_modules/
+.DS_Store
+cypress/screenshots/
+cypress/videos/
+Takım arkadaşları projeyi çektiğinde:
+
+bash
+git clone proje-url
+npm install  # package.json'daki tüm bağımlılıkları kurar
+
+
+# 1. Yeni proje klasörü oluştur
+mkdir client-e2e-tests
+cd client-e2e-tests
+
+# 2. Git başlat (opsiyonel)
+git init
+
+# 3. package.json + Cypress kur
+npm init -y
+npm install cypress --save-dev
+
+# 4. .gitignore ekle
+echo "node_modules/" >> .gitignore
+echo "cypress/screenshots/" >> .gitignore
+echo "cypress/videos/" >> .gitignore
+
+# 5. IntelliJ'de aç ve kodlamaya başla!
