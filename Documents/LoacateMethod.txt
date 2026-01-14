@@ -1,0 +1,67 @@
+CYPRESS LOCATE ALMA YÖNTEMLERİ VE ÖRNEKLERİ
+
+Cypress'te elementleri bulmak için genellikle `cy.get()` komutu kullanılır. CSS Selector mantığıyla çalışır.
+
+1. ID ile Locate Alma (#)
+HTML elementinin 'id' özelliği varsa en garantili yöntemdir. Başına '#' konulur.
+Örnek HTML: <input id="username" type="text">
+Cypress Kodu: cy.get('#username')
+
+2. Class ile Locate Alma (.)
+HTML elementinin 'class' özelliği varsa kullanılır. Başına '.' konulur.
+Örnek HTML: <button class="btn-primary">Giriş Yap</button>
+Cypress Kodu: cy.get('.btn-primary')
+
+3. Tag Name (Etiket Adı) ile Locate Alma
+Doğrudan HTML etiketinin adı yazılır. (input, button, div, a vb.)
+Örnek HTML: <form>...</form>
+Cypress Kodu: cy.get('form')
+
+4. Attribute (Özellik) ile Locate Alma ([attribute='değer'])
+Herhangi bir HTML özelliği kullanılarak locate alınabilir.
+Örnek HTML: <input name="email" placeholder="E-posta">
+Cypress Kodu: cy.get('[name="email"]')
+Alternatif: cy.get('[placeholder="E-posta"]')
+
+5. Metin İçeriği ile Locate Alma (cy.contains)
+Ekranda görünen metne göre element bulur. Özellikle butonlar ve linkler için çok kullanışlıdır.
+Örnek HTML: <button>Kaydet</button>
+Cypress Kodu: cy.contains('Kaydet')
+Not: cy.get('button').contains('Kaydet') şeklinde de zincirleme kullanılabilir.
+
+6. Parent-Child (Ebeveyn-Çocuk) İlişkisi ile Locate Alma
+Bir elementin altındaki başka bir elementi bulmak için kullanılır.
+Örnek HTML:
+<div id="menu">
+  <ul>
+    <li>Anasayfa</li>
+  </ul>
+</div>
+Cypress Kodu: cy.get('#menu > ul > li') (Doğrudan çocuk)
+Cypress Kodu: cy.get('#menu li') (Torunlar dahil altındaki tüm li'ler)
+
+7. Belirli Bir Sıradaki Elementi Alma (.eq, .first, .last)
+Birden fazla aynı element varsa sırasına göre seçilir. İndeks 0'dan başlar.
+Örnek: Listede 3. elemanı seçmek için.
+Cypress Kodu: cy.get('li').eq(2)
+İlk eleman: cy.get('li').first()
+Son eleman: cy.get('li').last()
+
+8. İçerdiği Metne Göre Filtreleme (.filter)
+Bulunan elementler arasında belirli bir metni içerenleri filtreler.
+Cypress Kodu: cy.get('li').filter(':contains("Hakkımızda")')
+
+9. Görünürlük Durumuna Göre (.visible)
+Sadece ekranda görünür olan elementleri seçmek için.
+Cypress Kodu: cy.get('button:visible')
+
+10. XPath Kullanımı (Eklenti Gerekir)
+Cypress varsayılan olarak XPath desteklemez ama 'cypress-xpath' eklentisi ile kullanılabilir.
+Cypress Kodu: cy.xpath('//input[@id="username"]')
+
+ÖZET İPUÇLARI:
+- Mümkünse her zaman ID (#id) kullanın.
+- ID yoksa, benzersiz bir Attribute veya Class kullanmaya çalışın.
+- `cy.contains()` kullanıcı gözüyle test yazdığı için çok değerlidir.
+- Karmaşık CSS selector'ler yerine, test edilebilirliği artırmak için geliştiricilerden `data-cy` veya `data-test-id` gibi özel attribute'lar eklemelerini isteyebilirsiniz.
+  Örnek: <button data-cy="submit-btn">Gönder</button> -> cy.get('[data-cy="submit-btn"]')

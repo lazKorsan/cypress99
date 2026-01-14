@@ -22,3 +22,4 @@ Cypress.Commands.add('runUS004', () => {
   cy.visit('https://example.com'); // Testin çalışacağı URL (gerekirse değiştirin)
   cy.exec('npx cypress run --spec "cypress/e2e/US004.cy.js"', { failOnNonZeroExit: false });
 });
+
