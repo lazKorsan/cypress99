@@ -6,3 +6,45 @@
 
 
 npm run test:US016
+
+###
+cypress da xpath kullanımı 
+C:\Users\user\IdeaProjects\cypress99\cypress\support\e2e.js
+
+npm install -D cypress-xpath
+
+
+cypress-file-upload
+◦
+Ne işe yarar: Dosya yükleme (upload) işlemlerini çok basitleştirir. Normalde zor olan "Dosya Seç" butonlarına dosya göndermeyi tek satırda yapar.
+◦
+Komut: npm install -D cypress-file-upload
+◦
+Kullanım: cy.get('input[type="file"]').attachFile('resim.png');
+
+
+cypress-real-events
+◦
+Ne işe yarar: Cypress'in standart .click() veya .type() komutları JavaScript simülasyonudur. Bu eklenti ise tarayıcıda gerçek (native) fare ve klavye olaylarını tetikler. Özellikle "hover" (üzerine gelme) işlemleri için hayat kurtarıcıdır.
+◦
+Komut: npm install -D cypress-real-events
+◦
+Kullanım: cy.get('.menu').realHover();
+
+
+cypress-iframe
+◦
+Ne işe yarar: Sayfa içindeki iFrame'lerle (gömülü pencereler) çalışmayı kolaylaştırır. Cypress varsayılan olarak iFrame içini görmekte zorlanır.
+◦
+Komut: npm install -D cypress-iframe
+◦
+Kullanım: cy.iframe('#my-frame').find('.btn').click();
+
+
+
+C:\Users\user\IdeaProjects\cypress99\cypress\support\e2e.js
+// Uygulama kaynaklı (uncaught exception) hataların testleri durdurmasını engelle
+Cypress.on('uncaught:exception', (err, runnable) => {
+// Hata mesajlarını konsolda görmeye devam etmek ama testi durdurmamak için false döneriz
+return false;
+});

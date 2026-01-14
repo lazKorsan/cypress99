@@ -2,10 +2,16 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test:US016": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US016URLDogrulama.cy.js\" --browser chrome --headed"
+    "test:US016": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US016URLDogrulama.cy.js\" --browser chrome --headed",
+    "test:US017": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US017Demoqa.cy.js\" --browser chrome --headed",
+    "test:US018": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US018ScrollMethod.cy.js\" --browser chrome --headed"
   },
   "devDependencies": {
-    "cypress": "^15.8.2"
+    "cypress": "^15.8.2",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-real-events": "^1.15.0",
+    "cypress-xpath": "^2.0.1"
   },
   "name": "cypress99",
   "version": "1.0.0",

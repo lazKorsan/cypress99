@@ -15,3 +15,12 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// XPath desteği için gerekli import
+require('cypress-xpath')
+
+// Uygulama kaynaklı (uncaught exception) hataların testleri durdurmasını engelle
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Hata mesajlarını konsolda görmeye devam etmek ama testi durdurmamak için false döneriz
+  return false;
+});
