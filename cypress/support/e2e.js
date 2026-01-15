@@ -19,6 +19,10 @@ import './commands'
 // XPath desteği için gerekli import
 require('cypress-xpath')
 
+// Cypress plugin-tab eklentisini import ediyoruz (eğer yüklü değilse package.json'a eklenmeli)
+// Ancak şu anlık doğrudan require ile çağırmayı deneyelim, eğer hata verirse kullanıcıya bildireceğiz.
+// require('cypress-plugin-tab')
+
 // Uygulama kaynaklı (uncaught exception) hataların testleri durdurmasını engelle
 Cypress.on('uncaught:exception', (err, runnable) => {
   // Hata mesajlarını konsolda görmeye devam etmek ama testi durdurmamak için false döneriz
