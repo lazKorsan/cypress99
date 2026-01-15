@@ -18,3 +18,10 @@ cy.log("Scroll to element view testi başlıyor")
       .click();
 
 })
+
+
+// // Buton tıklanabilir olana kadar (default 4sn) bekler ve doğrular
+ // cy.get('.btn-submit')
+   //  .should('be.visible')
+   //  .and('be.enabled')
+   //  .click();

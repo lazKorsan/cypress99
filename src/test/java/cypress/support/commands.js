@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('loginMethodQueryCart', (mail, password) => {
+    cy.log("Giriş işlemi başlıyor...");
+    cy.visit('https://querycart.com/#/home');
+
+    cy.get('#app i.lab-line-user').click();
+    cy.get('#formEmail').type(mail);
+    cy.get('#formPassword').type(password);
+    cy.get('#formRemember').check();
+    cy.get('#app button.w-full').click();
+});

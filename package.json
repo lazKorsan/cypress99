@@ -4,7 +4,21 @@
     "cypress:run": "cypress run",
     "test:US016": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US016URLDogrulama.cy.js\" --browser chrome --headed",
     "test:US017": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US017Demoqa.cy.js\" --browser chrome --headed",
-    "test:US018": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US018ScrollMethod.cy.js\" --browser chrome --headed"
+    "test:US018": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US018ScrollMethod.cy.js\" --browser chrome --headed",
+    "test:US019": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US019QueryCartRegister.cy.js\" --browser chrome --headed",
+    "test:US020": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US020QueryCartLogin.cy.js\" --browser chrome --headed",
+    "test:US021": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US021QueryCartRegister.cy.js\" --browser chrome --headed",
+    "test:US022": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2eUS022QueryCartLoginMethod.cy.js\" --browser chrome --headed",
+    "test:US023": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US023LoginWithMethod.cy.js\" --browser chrome --headed",
+    "test:US024": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US024AddToAdress.cy.js\" --browser chrome --headed",
+    "test:US025": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US025RegisterWithMethod.cy.js\" --browser chrome --headed",
+    "test:US026": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US026AddToAdressCurrentMail.cy.js\" --browser chrome --headed",
+    "test:US027": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US027QueryCartLogin.cy.js\" --browser chrome --headed",
+    "test:US028": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US028QueryCartLogin.cy.js\" --browser chrome --headed",
+    "test:US029": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US029QueryCartLogin.cy.js\" --browser chrome --headed",
+    "test:US030": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US030QueryCartLogin.cy.js\" --browser chrome --headed",
+    "test:US031": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US031QueryCartLogin.cy.js\" --browser chrome --headed"
+
   },
   "devDependencies": {
     "cypress": "^15.8.2",

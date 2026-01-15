@@ -48,3 +48,28 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 // Hata mesajlarını konsolda görmeye devam etmek ama testi durdurmamak için false döneriz
 return false;
 });
+
+
+tarayıcıda guvenlik uyarısı almamak için
+C:\Users\user\IdeaProjects\cypress99\src\test\java\cypress\integration\cypress.config.js
+
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+chromeWebSecurity: false, // Güvenlik uyarılarını ve SSL hatalarını engellemek için
+e2e: {
+experimentalStudio: true,
+specPattern: "src/test/java/cypress/integration/**/*.cy.{js,jsx,ts,tsx}",
+setupNodeEvents(on, config) {
+// "task" olayını burada kaydediyoruz
+on('task', {
+log(message) {
+console.log(message); // Bu mesaj terminal ekranına yazılır
+return null; // Cypress görevlerinin her zaman bir değer (veya null) dönmesi gerekir
+},
+});
+},
+},
+});
+
+##############################
