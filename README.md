@@ -72,4 +72,13 @@ return null; // Cypress görevlerinin her zaman bir değer (veya null) dönmesi 
 },
 });
 
+#####
+cypress da tab hareketi için özel plugin gerekiyor.
+###
+
+Elinizdeki araçlar (cypress-real-events ve yeni eklediğimiz cypress-plugin-tab) 
+insan hareketlerini taklit etmek için şu an piyasadaki en güçlü setlerden biri.
+Özellikle realHover ve realClick komutlarını aktif kullanmanızı tavsiye ederim,
+testlerin kararlılığını çok artırır.
+
 ##############################
