@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  chromeWebSecurity: false, // Güvenlik uyarılarını ve SSL hatalarını engellemek için
   e2e: {
     experimentalStudio: true,
     specPattern: "src/test/java/cypress/integration/**/*.cy.{js,jsx,ts,tsx}",
