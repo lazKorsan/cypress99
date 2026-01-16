@@ -8,4 +8,6 @@
    it('should work', () => {
      cy. // buraya geldiğinizde Ctrl+Space ile öneriler çıkacak
    })
+
+
  })

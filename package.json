@@ -2,6 +2,7 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "test:google": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/Google.feature\" --browser chrome --headed",
     "test:US016": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US016URLDogrulama.cy.js\" --browser chrome --headed",
     "test:US017": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US017Demoqa.cy.js\" --browser chrome --headed",
     "test:US018": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US018ScrollMethod.cy.js\" --browser chrome --headed",
@@ -21,9 +22,11 @@
     "lint": "eslint src/test/java/cypress/integration/**/*.js"
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@types/cypress": "^0.1.6",
     "@types/node": "^25.0.9",
-    "cypress": "^15.8.2",
+    "cypress": "^13.6.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
     "cypress-plugin-tab": "^1.0.5",
@@ -199,8 +202,10 @@
     "wrappy": "^1.0.2",
     "yauzl": "^2.10.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "src/test/java/cypress/integration/cypress/e2e/StepDefinitions/*.{js,ts}"
+    ]
+  }
 }
