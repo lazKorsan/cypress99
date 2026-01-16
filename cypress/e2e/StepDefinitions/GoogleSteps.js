@@ -11,3 +11,5 @@ When("Arama kutusuna {string} yazar ve enter tuşuna basar", (keyword) => {
 Then("Başlığın {string} içerdiğini doğrular", (keyword) => {
   cy.title().should("include", keyword);
 });
+
+
