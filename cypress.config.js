@@ -7,7 +7,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   e2e: {
     experimentalStudio: true,
-    specPattern: "src/test/java/cypress/integration/**/*.feature",
+    specPattern: "cypress/e2e/**/*.feature",
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
 
