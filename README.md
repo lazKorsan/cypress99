@@ -82,3 +82,23 @@ insan hareketlerini taklit etmek için şu an piyasadaki en güçlü setlerden b
 testlerin kararlılığını çok artırır.
 
 ##############################
+
+frameworkun comut alternatiflerini getirmesi için
+C:\Users\user\IdeaProjects\cypress99\jsconfig.json
+
+ve içne yapılan eklenti 
+
+{
+"include": [
+"./node_modules/cypress",
+"cypress/**/*.js",
+"src/**/*.js"
+]
+}
+
+
+###
+C:\Users\user\IdeaProjects\cypress99\.eslintrc.json
+###
+Bu eklenti syntax hatalırnının intelij tarafından algılanmasını sağlar 
+###

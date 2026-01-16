@@ -17,16 +17,20 @@
     "test:US028": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US028QueryCartLogin.cy.js\" --browser chrome --headed",
     "test:US029": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US029QueryCartLogin.cy.js\" --browser chrome --headed",
     "test:US030": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US030QueryCartLogin.cy.js\" --browser chrome --headed",
-    "test:US031": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US031QueryCartLogin.cy.js\" --browser chrome --headed"
-
+    "test:US031": "cypress run --spec \"src/test/java/cypress/integration/cypress/e2e/US031QueryCartLogin.cy.js\" --browser chrome --headed",
+    "lint": "eslint src/test/java/cypress/integration/**/*.js"
   },
   "devDependencies": {
+    "@types/cypress": "^0.1.6",
+    "@types/node": "^25.0.9",
     "cypress": "^15.8.2",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
+    "cypress-plugin-tab": "^1.0.5",
     "cypress-real-events": "^1.15.0",
     "cypress-xpath": "^2.0.1",
-    "cypress-plugin-tab": "^1.0.5"
+    "eslint": "^8.56.0",
+    "eslint-plugin-cypress": "^2.15.1"
   },
   "name": "cypress99",
   "version": "1.0.0",
