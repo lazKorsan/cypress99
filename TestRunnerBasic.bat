@@ -29,7 +29,7 @@ if "%choice%"=="6" exit
 
 :test1
 echo Running US033 with Chrome...
-npx cypress run --spec "src/test/java/cypress/integration/cypress/e2e/US033OrderCreateDelete.cy.js" --browser chrome
+npx cypress run --spec "src/test/java/cypress/integration/cypress/e2e/US033OrderCreateDelete.cy.js" --browser chrome --headed
 pause
 goto menu
 
